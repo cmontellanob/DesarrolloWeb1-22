@@ -1,0 +1,14 @@
+ #contenedor{
+    margin:0 auto;
+    text-align: center;
+}
+.encabezado{
+    background-color: #003366;
+    color: #FFFFFF;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    width: 900px;
+    height: 50px;
+}
