@@ -1,8 +1,14 @@
- #contenedor{
-    margin:0 auto;
+.contenedor {
     text-align: center;
+    margin: 0 auto;
+    border: 1px solid #000;
+    width: 900px;
 }
-.encabezado{
+
+
+
+.encabezado {
+    padding-top: 10px;
     background-color: #003366;
     color: #FFFFFF;
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -11,4 +17,114 @@
     text-align: center;
     width: 900px;
     height: 50px;
+    border: 1px solid #636ef1;
+}
+
+.izquierda {
+    float: left;
+    width: 200px;
+    height: 100px;
+  
+    background-color: bisque;
+    padding-bottom: 10px;
+
+}
+
+.centro {
+    float: left;
+    width: 500px;
+    height: auto;
+  
+    background-color: rgb(245, 251, 124);
+    padding-bottom: 10px;
+
+}
+
+.derecha {
+    float: left;
+    width: 200px;
+    height: 100px;
+  
+    background-color: bisque;
+    padding-bottom: 10px;
+
+}
+
+.pie {
+    clear: both;
+    padding-top: 10px;
+    background-color: #47ebfa;
+    color: #FFFFFF;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    
+    width: 900px;
+    height: 50px;
+    margin: 0 auto;
+   
+}
+
+ul.menuvertical {
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+    border-left: 1px solid #7C7C7C;
+
+}
+
+ul.menuvertical li a:link,
+ul.menuvertical li a:visited {
+    padding: .3em;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    background: #F4F4F4;
+    border-top: 1px solid #7C7C7C;
+    border-right: 1px solid #7C7C7C;
+    border-bottom: 1px solid #9C9C9C;
+}
+
+ul.menuvertical li a:hover {
+    background-color: #FC0;
+}
+
+ul.menuhorizontal{
+    visibility: hidden;
+   width: auto;
+    border-left: 1px solid #7C7C7C;
+}
+ul.menuhorizontal li {
+    text-align: center;
+    width: auto;
+    display: inline;
+    float: left;
+}
+ul.menuhorizontal li a:link,
+ul.menuhorizontal li a:visited
+{
+    padding: .3em;
+    
+    text-decoration: none;
+    color: #333;
+    background: #F4F4F4;
+    border-top: 1px solid #7C7C7C;
+    border-right: 1px solid #7C7C7C;
+    border-bottom: 1px solid #9C9C9C;
+    
+}
+ul.menuhorizontal li a:hover{
+    background-color: #FC0;
+}
+
+.cuadro{
+    width: 200px;
+    height: 100px;
+    top: 50px;
+    left: 1150px;
+    position: fixed;
+    margin: 0 auto;
+    color: red;
+    background-color: white;
+    border: 1px solid #636ef1;
 }
