@@ -8,9 +8,5 @@ function factorial($numero)
     return $factorial;
 }
 
-echo factorial(5)."<br>";
-echo factorial(10)."<br>";
-echo factorial(3)."<br>";
-
 
 ?>
