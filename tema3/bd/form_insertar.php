@@ -15,7 +15,10 @@ include('permiso.php'); ?>
     $resultado=mysqli_query($con,$sql);
 
     ?>
-    <form action="insertar.php" method="post">
+    <form action="insertar.php" method="post" enctype="multipart/form-data">
+        <label for="fotografia">Fotogtafia</label>
+        <input type="file" name="fotografia" >
+        <br>
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre">
         <br>

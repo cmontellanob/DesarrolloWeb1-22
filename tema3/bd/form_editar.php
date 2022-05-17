@@ -11,14 +11,19 @@ include('permiso.php'); ?>
 <body>
     <?php include('conexion.php'); 
     $id=$_GET["id"];
-    $sql = "SELECT id,nombre,apellidos,direccion,fecha_nacimiento,sexo,telefono,profesion_id FROM persona WHERE id=$id";
+    $sql = "SELECT id,nombre,apellidos,direccion,fecha_nacimiento,sexo,telefono,profesion_id,fotografia FROM persona WHERE id=$id";
     $consulta=mysqli_query($con,$sql);
     $fila=mysqli_fetch_array($consulta);
     $sql2="SELECT id,profesion FROM profesion";
     $resultado=mysqli_query($con,$sql2);
 
     ?>
-    <form action="editar.php" method="post">
+    <form action="editar.php" method="post" enctype="multipart/form-data">
+    <?php if ($fila['fotografia'] != "") { ?>
+                    <img width="100px" src="images\<?php echo $fila['fotografia']; ?>" alt="">
+                <?php } ?>
+        <label for="fotografia">Fotogtafia</label>
+        <input type="file" name="fotografia" >
      <input type="hidden" name="id" value="<?php echo $fila['id']?>">
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" value="<?php echo $fila['nombre']?>" >
