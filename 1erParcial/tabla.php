@@ -35,13 +35,13 @@ $operacion = $_GET["operacion"];
                     echo "<td>+</td><td>" . ($numero) . "</td><td>=</td><td>" . ($i + 1 + $numero) . "</td>";
                     break;
                 case 'restar':
-                    echo "<td>+</td><td>" . ($numero) . "</td><td>=</td><td>" . ($i + 1 - $numero) . "</td>";
+                    echo "<td>-</td><td>" . ($numero) . "</td><td>=</td><td>" . ($i + 1 - $numero) . "</td>";
                     break;
                 case 'multiplicar':
-                    echo "<td>+</td><td>" . ($numero) . "</td><td>=</td><td>" . (($i + 1) * $numero) . "</td>";
+                    echo "<td>*</td><td>" . ($numero) . "</td><td>=</td><td>" . (($i + 1) * $numero) . "</td>";
                     break;
                 case 'dividir':
-                    echo "<td>+</td><td>" . ($numero) . "</td><td>=</td><td>" . (($i + 1) / $numero) . "</td>";
+                    echo "<td>/</td><td>" . ($numero) . "</td><td>=</td><td>" . (($i + 1) / $numero) . "</td>";
                     break;
                 default:
                     break;
