@@ -1,0 +1,67 @@
+#contenido {
+    width:800px;
+    margin:0 auto;
+    border:1px solid black;
+}
+#cabeza {
+    background-color:rgb(210, 210, 210);
+    border: 1px solid #DDD;
+    padding: 10px;
+    
+}
+#cab1{
+    width:387px;
+    padding: 5px;
+    background-color:green;   
+    float: left;
+    border: 1px solid black;
+}
+#cab2{
+    width:387px;
+    padding: 5px;
+    background-color:green;   
+    float: left;
+    border: 1px solid black;
+}
+#izq{
+    width:650px;
+    margin:0 auto;
+    float: left;
+}
+#der{
+    width:150px;
+    float: left;
+}
+ul.menuvertical {
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+    border-left: 1px solid #e49a05;
+
+}
+
+ul.menuvertical li a:link,
+ul.menuvertical li a:visited {
+    padding: .3em;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #333;
+    background: white;
+    border-top: 2px solid #e49a05;
+    border-right: 2px solid #e49a05;
+    border-bottom: 2px solid #e49a05;
+}
+
+ul.menuvertical li a:hover {
+    background-color: green;
+}
+#pie{
+    clear: both;
+    height: 100px;
+    background-color: rgb(33, 178, 245);
+    color:white;
+    text-align: center;
+    padding-top: 20px;
+
+}
