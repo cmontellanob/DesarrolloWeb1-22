@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var variable1 = new Array();
+        variable1[0] = "Hola";
+        variable1[1] = "Mundo";
+        variable1[2] = "!";
+        variable1[3] = 15;
+         
+       variable1.forEach(function (elemento, indice, array){
+           console.log(elemento);
+           console.log(indice);
+           console.log(array);
+       });
+
+       for(var i = 0; i < variable1.length; i++){
+           console.log(variable1[i]);
+       }
+
+    </script>
+</body>
+</html>

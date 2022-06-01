@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function checkMail(cadena) {
+            var plant = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+
+            if (plant.test(cadena))
+                return "es correo valido";
+            else {
+                return " no es válida";
+            }
+        }
+        console.log(checkMail("asdasd@gmail.com"));
+        document.writeln(checkMail("asdasd@gmail.com"));
+
+    </script>
+
+
+</body>
+
+</html>
