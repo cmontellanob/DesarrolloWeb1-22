@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit laborum voluptate nesciunt earum eum nisi alias omnis minus. Sunt eaque consequatur ducimus fugit. Dolore aperiam ab commodi! A, obcaecati aspernatur?</p>
+    <p>Soluta at dolores eum, tempora velit atque. Fugit nihil consequatur repellat eveniet ducimus vitae, exercitationem perferendis dolore labore accusamus commodi consequuntur deserunt a excepturi! Non distinctio dolor nesciunt inventore odio?</p>
+    <p>Perferendis omnis officia, suscipit animi doloremque quisquam, tenetur vel neque quasi similique nostrum ad vero! Cumque accusantium esse praesentium, maiores delectus minima necessitatibus vitae, quis expedita temporibus, incidunt dolore porro!</p>
+    <p>Ad, similique tempora iusto perspiciatis ea non quasi doloremque minus harum quo id libero quos assumenda enim laborum modi suscipit repudiandae dolor, saepe deserunt architecto cupiditate. Veniam iste ad necessitatibus!</p>
+    <p>Necessitatibus autem inventore molestias consequuntur, laboriosam beatae repudiandae ducimus odit. Accusamus, corrupti dicta. Distinctio molestiae sequi voluptas incidunt cupiditate, odio, quisquam quae qui accusantium laborum eos ut dolorem vel? Consequuntur?</p>
+    <script>
+        var parrafos = document.getElementsByTagName('p');
+        for (var i = 0; i < parrafos.length; i++) {
+            if (i%2==0) {
+                parrafos[i].style.color = 'red';
+                parrafos[i].innerHTML =i+parrafos[i].innerHTML;
+            }
+            
+        }
+    </script>
+</body>
+</html>

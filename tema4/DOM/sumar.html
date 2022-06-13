@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #resultado {
+            border: 1px solid black;
+            background-color: antiquewhite;
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="a">A</label>
+        <input type="number" name="a" id="a" onmouseover=cambiarcolor('yellow')> <br>
+        <label for="b">B</label>
+        <input type="number" name="b" id="b" onmouseover=cambiarcolor('green')> <br>
+        <input type="button" value="calcular" onclick="sumar()" onmouseover=cambiarcolor('antiquewhite')>
+
+        <div id="resultado" onmouseover=cambiarcolor('red')>
+            &nbsp;
+        </div>
+
+    </div>
+    <script>
+        function sumar() {
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+            var resultado = a + b;
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+        function cambiarcolor(color){
+            document.getElementById("resultado").style.backgroundColor = color;
+        }
+
+    </script>
+</body>
+
+</html>

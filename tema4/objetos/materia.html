@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        sis256 = {
+            "nombre": "Tecnologia y Desarrollo web", "sigla": "SIS-256", "nro_clases": 2,
+            "docente": { "nombre": "Carlos David", "apellidos": "Montellano Barriga", "edad": 47 },
+            "alumnos": [{ "nombre": "Juan", "apellidos": "Perez", "edad": 20 },
+            { "nombre": "Pedro", "apellidos": "Perez", "edad": 20 },
+            { "nombre": "MAria", "apellidos": "Perez", "edad": 19 },
+            { "nombre": "Pedro", "apellidos": "Perez", "edad": 20 }
+            
+            ],
+            "aula":null,
+            "terminoclases":false
+        }
+        console.log(sis256);
+        document.writeln(sis256.nombre);
+        document.writeln("<br>");
+        document.writeln(sis256.docente.nombre);
+        document.writeln("<br>");
+        document.writeln(sis256.alumnos[0].nombre);
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #resultado {
+            border: 1px solid black;
+            background-color: antiquewhite;
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="a">A</label>
+        <input type="number" name="a" id="a" > <br>
+        <label for="b">B</label>
+        <input type="number" name="b" id="b" > <br>
+        <input type="button" value="calcular" id="boton" >
+
+        <div id="resultado" >
+            &nbsp;
+        </div>
+
+    </div>
+    <script>
+        document.getElementById("a").addEventListener("mouseover", cambiarcolor("yellow"));
+        document.getElementById("b").addEventListener("mouseover", cambiarcolor("green"));
+        document.getElementById("resultado").addEventListener("mouseover", cambiarcolor("red"));
+        document.getElementById("boton").addEventListener("mouseover", cambiarcolor("antiquewhite"));
+        document.getElementById("boton").addEventListener("click", sumar);
+        function sumar() {
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+            var resultado = a + b;
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+        function cambiarcolor(color){
+            document.getElementById("resultado").style.backgroundColor = color;
+        }
+       
+
+        
+    </script>
+</body>
+
+</html>
