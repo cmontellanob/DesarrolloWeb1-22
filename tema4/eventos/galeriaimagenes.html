@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+        <div style="display: inline"><img src="img/izq.png" alt="" width="20px" id="flechaizq" onclick="mostrarizq()"></div>
+        <div style="display: inline;width: 200px;"><img id="imagen" src="img/imagen1.png" alt="" width="200px"></div>
+        <div style="display: inline"><img src="img/der.png" alt="" width="20px" id="flechader" onclick="mostrarder()"></div>
+    </div>
+
+    <script>
+        let imagenes = ['img/imagen1.png', 'img/imagen2.jpg', 'img/imagen3.jpg', 'img/imagen4.jpg', 'img/imagen5.png'];
+        var i = 0;
+        var imagen = document.getElementById("imagen");
+        document.getElementById("imagen").src = imagenes[0];
+        setInterval(cambiar, 5000);
+
+        function cambiar() {
+            i++;
+            i = i % (imagenes.length - 1);
+            imagen.src = imagenes[i];
+        }
+        function mostrarizq() {
+            i--;
+            i = i % (imagenes.length - 1);
+            if (i < 0) {
+                i = imagenes.length - 1;
+            }
+            imagen.src= imagenes[i];
+        }
+        function mostrarder() {
+            i++;
+            i = i % (imagenes.length - 1);
+            imagen.src = imagenes[i];
+        }
+        
+
+    </script>
+
+
+</body>
+
+</html>

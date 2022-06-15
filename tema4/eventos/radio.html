@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<div>
+    <input type="radio" value="1" name="pregunta" id="pregunta_si" /> uno
+    <input type="radio" value="2" name="pregunta" id="pregunta_no" /> dos
+    <input type="radio" value="3" name="pregunta" id="pregunta_nsnc" checked="checked" /> tres
+</div>
+<div id="resultado">
+
+</div>
+<input type="button" value="enviar" onclick="mostrar()">
+    <script type="text/javascript">
+        function mostrar(){
+
+        
+        var elementos = document.getElementsByName("pregunta");
+            console.log(elementos);
+        var txt="";    
+            for (var i = 0; i < elementos.length; i++) {
+           txt=txt+" Elemento: " + elementos[i].value + "\n Seleccionado: " + elementos[i].checked+ "<br>";
+        }
+        document.getElementById("resultado").innerHTML=txt;
+    } 
+    </script>
+
+
+</body>
+
+</html>
