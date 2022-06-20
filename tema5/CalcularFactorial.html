@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #resultado{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            padding : 50px;
+            font-size: 40px;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="javascript:calcular()" method="GET">
+        <label for="">Ingrese el numero</label>
+        <input type="number" name="numero" id="numero">
+        <input type="submit" value="Calcular">
+
+    </form>
+
+
+    <div id="resultado" >
+        &nbsp;
+
+    </div>
+
+
+    <script>
+    function calcular()
+    {
+        var numero=document.getElementById("numero").value;
+        var ajax = new XMLHttpRequest();
+        ajax.open("GET","factorial.php?numero="+numero,true);
+        ajax.onreadystatechange=function()
+        {
+            if(ajax.readyState==4 && ajax.status==200)
+            {
+                document.getElementById("resultado").innerHTML=ajax.responseText;
+            }
+        }
+        ajax.send();
+
+    }
+
+    </script>
+
+
+</body>
+</html>

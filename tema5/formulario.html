@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #resultado{
+            width: 500px;
+                        background-color: yellow;
+            padding : 50px;
+            font-size: 40px;
+            margin:auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="javascript:registrar()" method="post">
+        <label for="nombre">
+            Nombre:
+        </label>
+        <input type="text" name="nombre" id="nombre" required=""><br><br>
+        <label for="apellido">
+            Apellido:
+        </label>
+        <input type="text" name="apellido" id="apellido" required=""><br><br>
+        <label for="edad">
+            Edad:
+        </label>
+        <input type="number" name="edad" id="edad" required=""><br><br>
+        <input type="submit" value="registrar">
+
+    </form>
+
+    <div id="resultado">
+
+    </div>
+
+    <script>
+        function registrar()
+        {
+            var nombre = document.getElementById("nombre").value;
+            var apellido = document.getElementById("apellido").value;
+            var edad = document.getElementById("edad").value;
+            var parametros="nombre="+nombre+"&apellido="+apellido+"&edad="+edad+"&nocache=" + Math.random();
+            var ajax = new XMLHttpRequest();
+            ajax.open("POST", "registrar.php", true);
+            ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            ajax.onreadystatechange = function()
+            {
+                if(ajax.readyState == 4 && ajax.status == 200)
+                {
+                    document.getElementById("resultado").innerHTML = ajax.responseText;
+                }
+            }
+            ajax.send(parametros);
+        }
+
+    </script>
+
+</body>
+
+</html>
