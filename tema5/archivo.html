@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Archivo</title>
+    <style>
+        #contenedor {
+            width: 500px;
+       
+            background-color: rgb(218, 214, 214);
+            border: 1px solid red;
+            padding: 20px;
+            font-size: 12px;
+
+        }
+
+        ul.opciones {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #progreso {
+            width: 100%;
+            height: 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+
+<div id="contenedor">
+    <div class="campo">
+        <ul class="opciones">
+            <li>
+                <input type="file" id="archivo" name="archivo" class="rm-input"  />
+            </li>
+            <li><img src="#" width="200px" id="imagen"></li>
+            <li>
+                <div id="tamano"></div>
+            </li>
+            <li>
+                <div id="tipo"></div>
+            </li>
+            <li>
+                <input type="button" value="Subir Archivo" onClick="subirArchivo()" class="rm-button" />
+            </li>
+        </ul>
+    </div>
+    <progress id="progreso" value="0" max="100" class="rm-progress"></progress>
+    <div id="percentageCalc"></div>
+</div>
+<script>
+    archivo=document.getElementById("archivo");
+    imagen=document.getElementById("imagen");
+    
+    archivo.onchange = evt => {
+        const [file] = archivo.files
+        if (file) {
+            imagen.src = URL.createObjectURL(file)
+        }
+        console.log('entro');
+        var archivoSeleccionado = document.getElementById("archivo");
+        var Archivo = archivoSeleccionado.files[0];
+        if (Archivo) {
+            var tamano = 0;
+            if (Archivo.size > 1048576)
+                tamano = (Math.round(Archivo.size * 100 / 1048576) / 100).toString() + ' MB';
+            else
+                tamano = (Math.round(Archivo.size * 100 / 1024) / 100).toString() + ' Kb';
+
+            var divtamano = document.getElementById('tamano');
+            var divtipo = document.getElementById('tipo');
+            divtamano.innerHTML = 'Tamaño: ' + tamano;
+            divtipo.innerHTML = 'Tipo: ' + Archivo.type;
+        }
+    }
+
+    
+    function subirArchivo() {
+
+        var url = "subir.php";
+        var archivoSeleccionado = document.getElementById("archivo");
+        var Archivo = archivoSeleccionado.files[0];
+        var fd = new FormData();
+        fd.append("archivo", Archivo);
+        var ajax = new XMLHttpRequest();
+        ajax.upload.addEventListener("loadstart", loadStartFunction, false);
+        ajax.upload.addEventListener("progress", progressFunction, false);
+        ajax.addEventListener("load", transferCompleteFunction, false);
+        ajax.addEventListener("error", subirFailed, false);
+        ajax.addEventListener("abort", subirCanceled, false);
+        
+        ajax.open("POST", url, true);
+        ajax.send(fd);
+    }
+
+    function progressFunction(evt) {
+        var progreso = document.getElementById("progreso");
+        var percentageDiv = document.getElementById("percentageCalc");
+        if (evt.lengthComputable) {
+            progreso.max = evt.total;
+            progreso.value = evt.loaded;
+            percentageDiv.innerHTML = Math.round(evt.loaded / evt.total * 100) + "%";
+        }
+    }
+
+    function loadStartFunction(evt) {
+        inicio = new Date().toDateString();
+        console.log(inicio + 'Comenzando a subir elarchivo');
+
+    }
+    function transferCompleteFunction(evt) {
+        alert('Transferencia completa');
+        var progreso = document.getElementById("progreso");
+        var percentageDiv = document.getElementById("percentageCalc");
+        progreso.value = 100;
+        percentageDiv.innerHTML = "100%";
+    }
+
+    function subirFailed(evt) {
+        alert("Hubo un error al subir el archivo.");
+    }
+
+    function subirCanceled(evt) {
+        alert("La operación se canceló o la conexión fue interrunpida.");
+    }
+
+</script>
+</body>
+
+</html>
