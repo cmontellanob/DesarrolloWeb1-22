@@ -8,4 +8,3 @@ $con->close();
 
 ?>
 <p>Se elimino con exito</p>
-<meta http-equiv="refresh" content="2;url=listar.php">

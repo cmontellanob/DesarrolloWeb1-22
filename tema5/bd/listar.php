@@ -18,9 +18,9 @@ if (isset($_GET["orden"])) {
 
 $consulta = mysqli_query($con, $sql);
 ?>
-<form action="listar.php" method="GET">
+<form action="javascript:buscar()" method="GET">
     <label for="buscar">Buscar</label>
-    <input type="text" name="buscar" value="<?php echo isset($_GET["buscar"]) ? $_GET["buscar"] : ''; ?>">
+    <input type="text" name="buscar" id="buscar" value="<?php echo isset($_GET["buscar"]) ? $_GET["buscar"] : ''; ?>">
     <input type="submit" value="Buscar">
 </form>
 <br>
@@ -29,13 +29,13 @@ $consulta = mysqli_query($con, $sql);
 <table>
     <tr>
         <th>Fotografia </th>
-        <th><a href="listar.php?orden=nombre">Nombre</a> </th>
-        <th><a href="listar.php?orden=apellidos">Apellidos</a></th>
-        <th><a href="listar.php?orden=direccion">Direccion</a></th>
+        <th><a href="javascript:ordenar('nombre')">Nombre</a> </th>
+        <th><a href="javascript:ordenar('apellidos')">Apellidos</a></th>
+        <th><a href="javascript:ordenar('direccion')">Direccion</a></th>
         <th>Fecha de Nacimiento</th>
         <th>Sexo</th>
         <th>Telefono</th>
-        <th><a href="listar.php?orden=profesion">Profesion</a></th>
+        <th><a href="javascript:ordenar('profesion')">Profesion</a></th>
         <th>Operaciones</th>
     </tr>
     <?php
@@ -54,7 +54,7 @@ $consulta = mysqli_query($con, $sql);
             <td><?php echo $fila["telefono"]; ?></td>
             <td><?php echo $fila["profesion"]; ?></td>
             <td><?php if ($_SESSION['nivel'] == 1) { ?>
-                    <a href="form_editar.php?id=<?php echo $fila['id'] ?>">Editar</a> <a href="eliminar.php?id=<?php echo $fila["id"] ?>">Elimnar</a>
+                    <a href="javascript:formeditar(<?php echo $fila['id'] ?>)">Editar</a> <a href="javascript:eliminar(<?php echo $fila["id"] ?>)">Elimnar</a>
                 <?php } ?>
             </td>
         </tr>

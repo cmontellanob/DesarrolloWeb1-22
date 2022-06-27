@@ -11,7 +11,7 @@ $profesion_id = $_POST["profesion_id"];
 
 
 $sql = "INSERT INTO persona(nombre,apellidos,direccion,fecha_nacimiento,sexo,telefono,profesion_id) VALUES('$nombre','$apellido','$direccion','$f_nacimiento','$sexo',$telefono,$profesion_id)";
-echo $sql;
+//echo $sql;
 mysqli_query($con, $sql);
 $fotografia=$_FILES['fotografia']['name'];
 if ($fotografia!="") {
@@ -34,4 +34,3 @@ if ($fotografia!="") {
 }
 ?>
 <p>Se inserto con exito</p>
-<meta http-equiv="refresh" content="4;url=listar.php">

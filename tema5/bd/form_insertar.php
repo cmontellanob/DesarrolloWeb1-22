@@ -15,7 +15,7 @@ include('permiso.php'); ?>
     $resultado=mysqli_query($con,$sql);
 
     ?>
-    <form action="insertar.php" method="post" enctype="multipart/form-data">
+    <form action="javascript:insertar()" method="post" enctype="multipart/form-data" id="form-persona">
         <label for="fotografia">Fotogtafia</label>
         <input type="file" name="fotografia" >
         <br>

@@ -18,7 +18,7 @@ include('permiso.php'); ?>
     $resultado=mysqli_query($con,$sql2);
 
     ?>
-    <form action="editar.php" method="post" enctype="multipart/form-data">
+    <form action="javascript:editar()" method="post" enctype="multipart/form-data" id="form-editar">
     <?php if ($fila['fotografia'] != "") { ?>
                     <img width="100px" src="images\<?php echo $fila['fotografia']; ?>" alt="">
                 <?php } ?>
