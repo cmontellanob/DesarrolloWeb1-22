@@ -1,0 +1,57 @@
+.contenedor {
+  width: 1000px;
+  margin: auto;
+
+}
+#menu {
+  width: 100%;
+  background-color: #1fb2c2;
+  border: 1px solid blue;
+}
+#titulo {
+  width: 100%;
+  background-color: blue;
+  border: 1px solid blue;
+}
+
+ul.menu {
+ 
+  width: 100%;
+  height: 30px;
+  
+}
+ul.menu li {
+  text-align: center;
+  width: 100px;
+  display: inline;
+  float: left;
+}
+ul.menu li a:link,
+ul.menu li a:visited {
+   padding: 10px;
+   text-decoration: none;
+    color: #333;
+    background-color: white;
+    
+  }
+ul.menu li.par:a{
+    border: 3px solid orange;
+}
+ul.menu li.impar:a{
+    border: 3px solid blue;
+}  
+ul.menu li a:hover {
+  background-color: #fc0;
+}
+#contenido {
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid blue;
+}
+#mensaje {
+    width: 100%;
+    min-height: 50px;
+    color:white;
+    background-color: #fc0;
+    border: 1px solid blue;
+}
