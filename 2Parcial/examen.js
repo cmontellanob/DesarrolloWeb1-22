@@ -72,3 +72,33 @@ function insertar()
     datos.append("carrera",document.getElementById("carrera").value);
     ajax.send(datos);
 }
+function pregunta4(){
+    var titulo = document.getElementById('titulo');
+	fetch("buscar.html")
+		.then(response => response.text())
+		.then(data => titulo.innerHTML=data)
+        .catch(error => console.log(error));
+}
+function buscar(){
+    var bus = document.getElementById('input_buscar').value;
+	fetch("listar.php?buscar="+bus)
+		.then(response => response.text())
+		.then(data => document.getElementById('contenido').innerHTML=data)
+        .catch(error => console.log(error));
+}
+function pregunta5(){
+    var ajax = new XMLHttpRequest() //crea el objetov ajax
+    ajax.open("GET", "colores.html", true);
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4) {
+            document.getElementById('contenido').innerHTML = ajax.responseText
+        }
+    
+    }
+    ajax.send();    
+}
+function cambiar(){
+    var seccion = document.getElementById('seccion').value;
+    var color = document.getElementById('sel_color').value;
+    document.getElementById(seccion).style.backgroundColor = color;
+}

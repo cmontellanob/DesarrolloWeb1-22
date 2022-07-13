@@ -1,57 +1,101 @@
 .contenedor {
   width: 1000px;
   margin: auto;
-
+  box-sizing: border-box;
 }
-#menu {
+ul.menu {
+  margin: auto;
+  padding: 10px 130px;
+  box-sizing: border-box;
+  background-color: #aff1f9;
   width: 100%;
-  background-color: #1fb2c2;
   border: 1px solid blue;
+}
+ul.menu li {
+  margin: 0px 10px;
+  display: inline-block;
+  background-color: white;
+}
+ul.menu li a:link {
+  padding: 10px;
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+}
+ul.menu li a:hover {
+  background-color: rgb(247, 220, 39);
+  border: 3px solid rgb(247, 220, 39) !important;
+  color: white;
+}
+ul.menu li.par a:link,
+ul.menu li.par a:visited {
+  border: 3px solid orange;
+}
+ul.menu li.impar a:link,
+ul.menu li.impar a:link {
+  border: 3px solid blue;
 }
 #titulo {
   width: 100%;
-  background-color: blue;
+  background-color: rgb(84, 112, 195);
   border: 1px solid blue;
-}
-
-ul.menu {
- 
-  width: 100%;
-  height: 30px;
-  
-}
-ul.menu li {
-  text-align: center;
-  width: 100px;
-  display: inline;
-  float: left;
-}
-ul.menu li a:link,
-ul.menu li a:visited {
-   padding: 10px;
-   text-decoration: none;
-    color: #333;
-    background-color: white;
-    
-  }
-ul.menu li.par:a{
-    border: 3px solid orange;
-}
-ul.menu li.impar:a{
-    border: 3px solid blue;
-}  
-ul.menu li a:hover {
-  background-color: #fc0;
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
 }
 #contenido {
-    width: 100%;
-    min-height: 50px;
-    border: 1px solid blue;
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  padding: 10px;
 }
 #mensaje {
-    width: 100%;
-    min-height: 50px;
-    color:white;
-    background-color: #fc0;
-    border: 1px solid blue;
+  width: 100%;
+  min-height: 50px;
+  color: white;
+  background-color: #fc0;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+#buscar{
+  background-color: rgb(84, 112, 195);
+  color: white;
+}
+#input_buscar{
+  padding: 10px 0;
+  
+  width:300px;
+  border: 1px solid #fc0;
+}
+#seccion{
+  padding: 10px 0;
+  width:200px;
+  border: 1px solid blue;
+}
+#sel_color{
+  height: 30px;
+  width:200px;
+  border: 1px solid blue;
+}
+.btn-naranja{
+  padding: 10px 0;
+  width: 100px;
+  background-color: rgb(247, 220, 39);
+  border: 3px solid orangered;
+  color: white;
+}
+.mostrarlibro{
+  display: inline-block;
+  width: 170px;
+  border: 1px solid blue;
+  padding: 10px;
+  margin: 20px;
+}
+.img-libro{
+  width: 100px;
+  display: inline-block;
+
 }
